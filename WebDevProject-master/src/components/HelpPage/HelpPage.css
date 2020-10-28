@@ -1,0 +1,8 @@
+#helpText{
+    position: absolute;
+    left: 50px;
+    padding-top: 50px;
+    font-size: 40px;
+    background-color:  #282c34;
+    color: white;
+}

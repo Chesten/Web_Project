@@ -1,0 +1,85 @@
+.button{
+    font-size: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.scrollDiv{
+    position: absolute;
+    font-size: 20px;
+    background-color: #282828;;
+    padding:20px;
+    padding-top: 0px;
+    left: 0px;
+    right: 300px;
+    bottom: 0px;
+    top: 60px;
+}
+
+.scrollList{
+    text-align: left;
+    margin-left: -400px
+    
+}
+
+#navbar{
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    width: 300px;
+    bottom: 0px;
+    font-size: 20px;
+}
+  /* Navbar links */
+#navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+  }
+
+#searchBar{
+    text-align: center;
+}
+  
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  } 
+
+#logoutButton{
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+}
+
+.scrollDiv #progress-bar{
+    margin-left: 50px;
+    margin-bottom: -40px;
+}
+
+#songName{
+  font-size: 40px;
+  width: 95%;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: black;
+  background-color:#66CCFF;
+  border-top-left-radius: 30px;
+}
+#details, #Num{
+  font-size: 24px;
+}
+
+

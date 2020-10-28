@@ -1,0 +1,68 @@
+SOME OF THESE ARE ACTUAL FUNCTIONS, OTHERS ARE JUST FUNCTIONALITY
+WHEN YOU GET SOME TASK DONE, PLACE "//" AT THE BEGINNING OF THE LINE 
+    things that are nested (indented) can not be compleated untill ALL 
+    aspects of the lower levels are compleated (View can't be marked as 
+    "//" if their's no "CreateAccount" view)  Hopefully this will keep 
+    both of us on track and make it easy to see whats done and what's not
+    
+Feel free to add anything you realize we need, also use this for keeping track
+    of variable names.  
+
+
+VIEW:
+    Box layout;
+        right side bar for functionality?
+        title bar on top
+        "Main" box with "content" boxes
+        Content boxes:
+            abreviated version
+            Long format
+    Styling on each box
+    In element Music player
+
+    CreateAccount View: Feilds for each value the user can set (not posts, or NumPlays, these will be empty or 0
+        if new account, and remain the same if editing)
+    CreatePost View: Feilds for each value can be set (not play count.  "hidden" logic, If FILE remains the same
+        dont reset playCount, if it does change, reset play count)
+MODEL: 
+    User DB:
+        (unique) ID# [key]
+        (unique) UserName [secondary key]
+        (unique) Email
+        Posts (array of the PostID's, can use .length to get how post user has made)
+        NumPlays (infered from going through the Posts array and adding up all the PlayCount's of each post)
+    
+    PostDatabase
+        (unique) PostID
+        UserName
+        Title
+        Description
+        DatePosted
+        FILE
+        PlayCount (when played increment)
+
+CONTROLLER:
+    CreatePost(): Bring up CreatePost view for user to input all data for a new post, once submitted, this will also 
+        add unique ID of post to User's "Posts" array to link user to a post
+    EditPost(): If User owns a post, they can edit the post, just bring up the CreatePost View and update the values 
+        without updating the PostID
+    DeletePost(): If a user owns a post, they can delete the post, by bringing up the CreatePost view, and selecting
+        the delete button in the bottom.  This will remove the PostID from the user's Posts array
+    PlayClip(): When a "Play" is clicked, get the clip associated with the post, and play the song, also increment the 
+        posts PlayCount.  (used for collecting data on the posts play count, as well as a users total play count and 
+        what tracks are doing well compaired to others) 
+    
+    ?? LoadMore(): Background function to load more posts in chuncks before user gets to bottom of page?  This might be
+        helpful for giving an endless stream of content?  I don't know through
+    
+    CreateAccount(): Load Account view, for when a user wants to create a new account, so they can make posts.  
+    EditAccount(): Load Account view so the user can edit their account without changing the unique ID, must also still
+        adhear to unique checks (username, and email) also should NOT reset play count, or post Count.  
+    
+
+    
+    //additional features
+    Sort(): Base line will sort by uniqueID (just looping through the DB), but could also display based on playCount, or
+        Alphabetical
+    
+        
